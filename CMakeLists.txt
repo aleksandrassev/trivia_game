@@ -3,4 +3,5 @@ project(trivia_game)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(trivia_game main.cpp)
+
+add_executable(trivia_game GameRunner.cpp Game.cpp)
