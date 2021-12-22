@@ -1,0 +1,3 @@
+D:/C/trivia_game/cmake-build-debug/CMakeFiles/trivia_game.dir
+D:/C/trivia_game/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/C/trivia_game/cmake-build-debug/CMakeFiles/rebuild_cache.dir
