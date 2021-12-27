@@ -6,7 +6,7 @@
 
 using namespace std;
 
-Game::Game() : m_places{}, m_purses{}, m_currentPlayer(0), m_isGettingOutOfPenaltyBox{}, m_inPenaltyBox{}
+Game::Game() : m_places{}, m_purses{}, m_currentPlayer(0), m_isGettingOutOfPenaltyBox{false}, m_inPenaltyBox{true}
 {
     for (int i = 0; i < 50; i++)
     {
@@ -26,8 +26,6 @@ Game::Game() : m_places{}, m_purses{}, m_currentPlayer(0), m_isGettingOutOfPenal
         m_rockQuestions.push_back(createRockQuestion(i));
     }
 }
-
-
 
 
 string Game::createRockQuestion(int index)
@@ -194,3 +192,4 @@ bool Game::didPlayerWin()
 {
     return !(m_purses[m_currentPlayer] == 6);
 }
+

@@ -29,9 +29,6 @@ private:
 public:
     Game();
 
-
-
-
     string createRockQuestion(int index);
     bool isPlayable();
     bool add(string playerName);
@@ -39,6 +36,7 @@ public:
     void roll(int roll);
     bool wasCorrectlyAnswered();
     bool wrongAnswer();
+
 };
 
 #endif /* GAME_H_ */
