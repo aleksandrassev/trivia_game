@@ -8,23 +8,7 @@ using namespace std;
 
 Game::Game() : m_places{}, m_purses{}, m_currentPlayer(0), m_isGettingOutOfPenaltyBox{false}, m_inPenaltyBox{true}
 {
-    for (int i = 0; i < 50; i++)
-    {
-        ostringstream oss(ostringstream::out);
-        oss << "Pop Question " << i;
-
-        m_popQuestions.push_back(oss.str());
-
-        char str[255];
-        sprintf(str, "Science Question %d", i);
-        m_scienceQuestions.push_back(str);
-
-        char str1[255];
-        sprintf(str1, "Sports Question %d", i);
-        m_sportsQuestions.push_back(str1);
-
-        m_rockQuestions.push_back(createRockQuestion(i));
-    }
+    createQuestions(50);
 }
 
 int* Game::get_places()
@@ -68,11 +52,43 @@ list<string> Game::get_rockQuestions()
     return m_rockQuestions;
 }
 
-string Game::createRockQuestion(int index)
+void Game::createPopQuestion(int questionNr)
 {
-    char indexStr[127];
-    sprintf(indexStr, "Rock Question %d", index);
-    return indexStr;
+    ostringstream oss(ostringstream::out);
+    oss << "Pop Question " << questionNr;
+    m_popQuestions.push_back(oss.str());
+}
+
+void Game::createScienceQuestion(int questionNr)
+{
+    ostringstream oss(ostringstream::out);
+    oss << "Science Question " << questionNr;
+    m_scienceQuestions.push_back(oss.str());
+}
+
+void Game::createSportsQuestion(int questionNr)
+{
+    ostringstream oss(ostringstream::out);
+    oss << "Sports Question " << questionNr;
+    m_sportsQuestions.push_back(oss.str());
+}
+
+void Game::createRockQuestion(int questionNr)
+{
+    ostringstream oss(ostringstream::out);
+    oss << "Rock Question " << questionNr;
+    m_rockQuestions.push_back(oss.str());
+}
+
+void Game::createQuestions(int questionAmount)
+{
+    for (int i = 0; i < questionAmount; i++)
+    {
+        createPopQuestion(i);
+        createScienceQuestion(i);
+        createSportsQuestion(i);
+        createRockQuestion(i);
+    }
 }
 
 bool Game::isPlayable()

@@ -39,7 +39,12 @@ public:
     list<string> get_sportsQuestions();
     list<string> get_rockQuestions();
 
-    string createRockQuestion(int index);
+    void createPopQuestion(int questionNr);
+    void createScienceQuestion(int questionNr);
+    void createSportsQuestion(int questionNr);
+    void createRockQuestion(int questionNr);
+    void createQuestions(int questionAmount);
+
     bool isPlayable();
     bool add(string playerName);
     int howManyPlayers();
