@@ -5,10 +5,10 @@ static bool notAWinner;
 
 int main()
 {
-    int ext_count = 0;
-    while (ext_count < 50)
+    int game_count = 0;
+    while (game_count < 50)
     {
-        srand(ext_count);
+        srand(game_count);
 
         Game aGame;
 
@@ -27,12 +27,14 @@ int main()
             if (rand() % 9 == 7)
             {
                 notAWinner = aGame.wrongAnswer();
+
             } else
             {
                 notAWinner = aGame.wasCorrectlyAnswered();
             }
+            std::cout<<notAWinner<<std::endl;
         } while (counter < 200);
 
-        ext_count++;
+        game_count++;
     }
 }

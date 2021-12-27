@@ -6,43 +6,39 @@ using namespace std;
 #ifndef GAME_H_
 #define GAME_H_
 
-class Game{
+class Game
+{
+private:
+    vector<string> m_players;
 
-		private:
-			vector<string> players;
+    int m_places[6];
+    int m_purses[6];
+    unsigned int m_currentPlayer;
+    bool m_isGettingOutOfPenaltyBox;
+    bool m_inPenaltyBox[6];
 
-			int places[6];
-			int purses[6];
+    list<string> m_popQuestions;
+    list<string> m_scienceQuestions;
+    list<string> m_sportsQuestions;
+    list<string> m_rockQuestions;
 
-			bool inPenaltyBox[6];
-
-			list<string> popQuestions;
-			list<string> scienceQuestions;
-			list<string> sportsQuestions;
-			list<string> rockQuestions;
-
-			unsigned int currentPlayer;
-			bool isGettingOutOfPenaltyBox;
+    bool didPlayerWin();
+    void askQuestion();
+    string currentCategory();
 
 public:
-	Game();
-	string createRockQuestion(int index);
-	bool isPlayable();
-	bool add(string playerName);
+    Game();
 
-	int howManyPlayers();
-	void roll(int roll);
 
-	private:
-		void askQuestion();
-		string currentCategory();
 
-				public:
-					bool wasCorrectlyAnswered();
-					bool wrongAnswer();
 
-private:
-	bool didPlayerWin();
+    string createRockQuestion(int index);
+    bool isPlayable();
+    bool add(string playerName);
+    int howManyPlayers();
+    void roll(int roll);
+    bool wasCorrectlyAnswered();
+    bool wrongAnswer();
 };
 
 #endif /* GAME_H_ */
