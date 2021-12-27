@@ -13,5 +13,8 @@ FetchContent_MakeAvailable(googletest)
 
 include_directories(unit_test)
 
-add_executable(trivia_game GameRunner.cpp Game.cpp GameTest.cpp)
+add_executable(trivia_game
+        GameRunner.cpp
+        Game.cpp
+        GameTest.cpp)
 target_link_libraries(trivia_game gtest gtest_main)

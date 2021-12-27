@@ -28,6 +28,16 @@ private:
 
 public:
     Game();
+    int* get_places();
+    int* get_purses();
+    bool* get_inPenaltyBox();
+    bool get_isGettingOutOfPenaltyBox();
+    int get_currentPlayer();
+    vector<string> get_players();
+    list<string> get_popQuestions();
+    list<string> get_scienceQuestions();
+    list<string> get_sportsQuestions();
+    list<string> get_rockQuestions();
 
     string createRockQuestion(int index);
     bool isPlayable();

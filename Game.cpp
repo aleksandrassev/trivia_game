@@ -27,6 +27,46 @@ Game::Game() : m_places{}, m_purses{}, m_currentPlayer(0), m_isGettingOutOfPenal
     }
 }
 
+int* Game::get_places()
+{
+    return m_places;
+}
+int* Game::get_purses()
+{
+    return m_purses;
+}
+bool* Game::get_inPenaltyBox()
+{
+    return m_inPenaltyBox;
+}
+bool Game::get_isGettingOutOfPenaltyBox()
+{
+    return m_isGettingOutOfPenaltyBox;
+}
+int Game::get_currentPlayer()
+{
+    return m_currentPlayer;
+}
+vector<string> Game::get_players()
+{
+    return m_players;
+}
+list<string> Game::get_popQuestions()
+{
+    return m_popQuestions;
+}
+list<string> Game::get_scienceQuestions()
+{
+    return m_scienceQuestions;
+}
+list<string> Game::get_sportsQuestions()
+{
+    return m_sportsQuestions;
+}
+list<string> Game::get_rockQuestions()
+{
+    return m_rockQuestions;
+}
 
 string Game::createRockQuestion(int index)
 {
@@ -192,4 +232,3 @@ bool Game::didPlayerWin()
 {
     return !(m_purses[m_currentPlayer] == 6);
 }
-
